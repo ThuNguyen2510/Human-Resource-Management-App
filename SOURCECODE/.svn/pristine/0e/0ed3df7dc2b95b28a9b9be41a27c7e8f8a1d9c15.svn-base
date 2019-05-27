@@ -1,0 +1,164 @@
+﻿using QLNS.BLL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QLNS.GUI
+{
+    public partial class THONGKE : Form
+    {
+        NhanVien_BLL nvbll { get; set; }
+        public THONGKE()
+        {
+            InitializeComponent();
+            nvbll = new NhanVien_BLL();
+        }
+        private void show()
+        {
+            dgvThongKe.DataSource = nvbll.HienThiNhanVien();
+        }
+        private void showkhoa(string ms)
+        {
+            dgvThongKe.DataSource = nvbll.ThongKeNV_BLL(ms);
+        }
+        public void dem()
+        {
+            int tv = 0;
+            foreach (DataGridViewRow i in dgvThongKe.Rows)
+            {
+                if (i.Cells[0].Value != null) tv += 1;
+            }
+            txtTong.Text = Convert.ToString(tv);
+        }
+        private void butCNTT_Click(object sender, EventArgs e)
+        {
+            showkhoa("Công nghệ thông tin");
+            dem();
+        }
+
+        private void butDIEN_Click(object sender, EventArgs e)
+        {
+            showkhoa("Điện"); dem();
+        }
+
+        private void butHoa_Click(object sender, EventArgs e)
+        {
+            showkhoa("Hóa"); dem();
+        }
+
+        private void butCokhi_Click(object sender, EventArgs e)
+        {
+            showkhoa("Cơ Khí"); dem();
+        }
+
+        private void butCoKhiGT_Click(object sender, EventArgs e)
+        {
+            showkhoa("Cơ Khí Giao Thông"); dem();
+        }
+
+        private void butQLDA_Click(object sender, EventArgs e)
+        {
+            showkhoa("Quản Lí Dự Án"); dem();
+        }
+
+        private void butMoiTruong_Click(object sender, EventArgs e)
+        {
+            showkhoa("Môi Trường"); dem();
+        }
+
+        private void butNhienDienLah_Click(object sender, EventArgs e)
+        {
+            showkhoa("Công nghệ Nhiệt - Điện lạnh"); dem();
+        }
+
+        private void butDTVT_Click(object sender, EventArgs e)
+        {
+            showkhoa("Công nghệ Nhiệt - Điện lạnh"); dem();
+        }
+
+        private void butXDDanDung_Click(object sender, EventArgs e)
+        {
+            showkhoa("Xây dựng Dân dựng và Công nghiệp"); dem();
+        }
+
+        private void butXDCauDuong_Click(object sender, EventArgs e)
+        {
+            showkhoa("Xây dựng cầu đường"); dem();
+        }
+
+        private void butKienTruc_Click(object sender, EventArgs e)
+        {
+            showkhoa("Kiến trúc");   dem();
+        }
+
+        private void butXDThuyLoi_Click(object sender, EventArgs e)
+        {
+            showkhoa("Xây dựng thủy lợi thủy điện");
+            dem();
+        }
+
+        private void butCSVC_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Cơ sở vật chất");
+            dem();
+        }
+
+        private void butCTSV_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Công tác sinh viên");
+            dem();
+        }
+
+        private void butDaoTao_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Đào Tạo"); dem();
+        }
+
+        private void butKeHoachTC_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Kế hoạch-Tài chính"); dem();
+        }
+
+        private void butKhaothiDambao_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Khảo thí và đảm báo chất lượng GD"); dem();
+        }
+
+        private void butKHCN_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Khoa học công nghệ- hợp tác quốc tế"); dem();
+        }
+
+        private void butThanhtra_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Thanh tra pháp chế"); dem();
+        }
+
+        private void butTochucHanhchinh_Click(object sender, EventArgs e)
+        {
+            showkhoa("Phòng Tổ chức-hành chính"); dem();
+        }
+
+        private void butBGH_Click(object sender, EventArgs e)
+        {
+            showkhoa("Ban Giám Hiệu"); dem();
+        }
+
+        private void butHienThi_Click(object sender, EventArgs e)
+        {
+            show();
+            dem();
+        }
+
+        private void butThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+    }
+}
