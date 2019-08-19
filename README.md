@@ -1,6 +1,7 @@
-# QUANLYNHANSUDHBK
-CSDL: データベース　ファイル
-BAOCAO：スライド　
-SOURECODE：コード　ファイル
-IMPORT：人の情報を追加する　ファイル
-HINHANH:人の写真
+１．テーマ：人事を管理システム（アプリケーション）
+２．プログラミング言語：C#
+3.　CSDL　: データベース　ファイル
+4．BAOCAO　：スライド　
+5.SOURECODE　：コード　ファイル
+6．IMPORT　：人の情報を追加する　ファイル　　
+7．HINHANH:人の写真
